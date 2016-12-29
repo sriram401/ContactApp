@@ -1,0 +1,22 @@
+<link rel="stylesheet" type="text/css"
+	href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+
+<div>
+	<div class="container">
+		<table
+			class="table-striped table-hover table-condensed table-bordered">
+			<tr>
+				<th>Course</th>
+				<th>Mark</th>
+			</tr>
+			<tr ng-repeat="x in ctrl.courses">
+				<td>{{x.name | uppercase}}</td>
+				<td>{{x.Mark}}</td>
+				<td ng-click="ctrl.addOne(x.name)"><span
+					class="glyphicon glyphicon-plus"></td>
+				<td ng-click="ctrl.subtractOne(x.name)"><span
+					class="glyphicon glyphicon-minus"></td>
+			</tr>
+		</table>
+	</div>
+</div>
