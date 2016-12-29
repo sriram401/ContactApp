@@ -1,3 +1,4 @@
-Start http-server in this location
+1) http-server in this location by :
+c:\>http-server
 
-and invoke http://localhost:8080
+2) invoke http://localhost:8080
