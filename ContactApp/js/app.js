@@ -36,9 +36,5 @@ app.config(function($routeProvider) {
 
 
 
-app.controller("ContactCtrl", function() {
-	this.age = 36;
-	this.name = "Sriram";
-});
 
 
