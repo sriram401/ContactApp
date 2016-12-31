@@ -23,6 +23,17 @@ app.service("EmployeeService",function($http){
 		});
 	};
 
+	this.delEmployee = function(emp)
+	{
+		console.log("Deleting Object :" + emp.id);
+		
+		return $http.delete("http://localhost:3000/employees/"+emp.id)
+		.then(function(response){
+			console.log(response);
+			return response.data;
+		});
+	};
+
 	
 	
 	this.addEmployee = function(emp)

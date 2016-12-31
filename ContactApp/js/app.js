@@ -28,6 +28,12 @@ app.config(function($routeProvider) {
         controllerAs: "ctrl"
 
     })
+    .when("/page4", {
+        templateUrl : "partials/page4.html",
+        controller: "Page4Controller",
+        controllerAs: "ctrl"
+
+    })
     .otherwise(
     {
     	template : "<p class=\"label-error\">Error , Page Not found</p>"

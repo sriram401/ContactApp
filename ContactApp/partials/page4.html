@@ -6,21 +6,7 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="container">
-
 				<p class="alert-warning">{{ctrl.message}}</p>
-
-				<p>
-					<span>Id</span> <input type="text" ng-model="ctrl.newEmp.id"></input>
-				</p>
-				<p>
-					<span>Name</span> <input type="text" ng-model="ctrl.newEmp.name"></input>
-				</p>
-				<p>
-					<span>Salary</span> <input type="text"
-						ng-model="ctrl.newEmp.salary"></input>
-				</p>
-				<button ng-click="ctrl.addEmp()">SAVE</button>
-
 			</div>
 
 			<hr />
@@ -28,8 +14,8 @@
 
 			<div class="container">
 
-				<p>Post URL : http://localhost:3000/employees</p>
-				<p>Post payload : {{ctrl.newEmp}}</p>
+				<p>Delete URL : http://localhost:3000/employees/{{ctrl.selectedEmp.id}}</p>
+				<p>Delete payload : None</p>
 
 			</div>
 
@@ -50,10 +36,11 @@
 						<th>Salary</th>
 					</tr>
 
-					<tr ng-repeat="emp in ctrl.emps">
+					<tr ng-repeat="emp in ctrl.emps" ng-mouseover="ctrl.selectedEmp = emp">
 						<td>{{emp.id}}</td>
 						<td>{{emp.name}}</td>
 						<td>{{emp.salary}}</td>
+						<td><button ng-click="ctrl.delEmp()">DEL</button></td>
 					</tr>
 
 				</table>
