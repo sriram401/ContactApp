@@ -2,7 +2,7 @@ var app=angular.module("ContactApp");
 
 app.controller("Page1Controller", function(EmployeeService) {
 
-	this.message = "Still under construction- P1!"
+	this.message = "Sample GET from Employee Service - http://localhost:3000/employees"
 	
 	var self = this;
 	
