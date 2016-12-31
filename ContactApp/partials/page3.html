@@ -1,10 +1,67 @@
 <link rel="stylesheet" type="text/css"
 	href="../bower_components/bootstrap/dist/css/bootstrap.css" />
 
-<div>
-	<div class="container">
+<div ng-init="ctrl.refresh()">
 
-		<p class="alert-warning">{{ctrl.message}}</p>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="container">
 
+				<p class="alert-warning">{{ctrl.message}}</p>
+
+				<p>
+					<span>Id</span> <input type="text" ng-model="ctrl.newEmp.id"></input>
+				</p>
+				<p>
+					<span>Name</span> <input type="text" ng-model="ctrl.newEmp.name"></input>
+				</p>
+				<p>
+					<span>Salary</span> <input type="text"
+						ng-model="ctrl.newEmp.salary"></input>
+				</p>
+				<button ng-click="ctrl.addEmp()">SAVE</button>
+
+			</div>
+
+			<hr />
+
+
+			<div class="container">
+
+				<p>Post URL : http://localhost:3000/employees</p>
+				<p>Put payload : {{ctrl.newEmp}}</p>
+
+			</div>
+
+			<hr />
+		</div>
+
+
+		<div class="col-md-6">
+			<div class="container">
+
+				<h1>Formatted Data</h1>
+
+				<table
+					class="table-condensed table-striped table-hover table-bordered">
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Salary</th>
+					</tr>
+
+					<tr ng-repeat="emp in ctrl.emps">
+						<td>{{emp.id}}</td>
+						<td>{{emp.name}}</td>
+						<td>{{emp.salary}}</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
 	</div>
+
+
+
+
 </div>

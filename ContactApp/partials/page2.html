@@ -10,16 +10,16 @@
 				<p class="alert-warning">{{ctrl.message}}</p>
 
 				<p>
-					<span>Id</span> <input type="text" ng-model="ctrl.newEmp.id"></input>
+					<span>Id</span> <input type="text" ng-model="ctrl.selectedEmp.id"></input>
 				</p>
 				<p>
-					<span>Name</span> <input type="text" ng-model="ctrl.newEmp.name"></input>
+					<span>Name</span> <input type="text" ng-model="ctrl.selectedEmp.name"></input>
 				</p>
 				<p>
 					<span>Salary</span> <input type="text"
-						ng-model="ctrl.newEmp.salary"></input>
+						ng-model="ctrl.selectedEmp.salary"></input>
 				</p>
-				<button ng-click="ctrl.addEmp()">SAVE</button>
+				<button ng-click="ctrl.saveEmp()">SAVE</button>
 
 			</div>
 
@@ -28,8 +28,8 @@
 
 			<div class="container">
 
-				<p>Put URL : http://localhost:3000/employees/{{ctrl.newEmp.id}}</p>
-				<p>Put payload : {{ctrl.newEmp}}</p>
+				<p>Put URL : http://localhost:3000/employees/{{ctrl.selectedEmp.id}}</p>
+				<p>Put payload : {{ctrl.selectedEmp}}</p>
 
 			</div>
 
@@ -50,7 +50,7 @@
 						<th>Salary</th>
 					</tr>
 
-					<tr ng-repeat="emp in ctrl.emps">
+					<tr ng-repeat="emp in ctrl.emps" ng-click="ctrl.selectedEmp = emp">
 						<td>{{emp.id}}</td>
 						<td>{{emp.name}}</td>
 						<td>{{emp.salary}}</td>
