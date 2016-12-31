@@ -1,4 +1,1 @@
-1) http-server in this location by :
-c:\>http-server
-
-2) invoke http://localhost:8080
+This is a demo app for ANGULAR Services.
