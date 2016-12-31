@@ -10,5 +10,18 @@ app.service("EmployeeService",function($http){
 			return response.data;
 		});
 	};
+
+	
+	this.addEmployee = function(emp)
+	{
+		console.log("Saving Object :" + emp.id);
+		
+		return $http.put("http://localhost:3000/employees/"+emp.id,emp)
+		.then(function(response){
+			console.log(response);
+			return response.data;
+		});
+	};
+
 	
 });

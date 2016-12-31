@@ -2,10 +2,37 @@
 	href="../bower_components/bootstrap/dist/css/bootstrap.css" />
 
 <div>
-	<div class="container">
 
-		<p class="alert-warning">{{ctrl.message}}</p>
-		<p>{{ctrl.emps}}</p>
 
+	<div class="">
+		<div class="">
+			<div class="container">
+				<p class="alert-warning">{{ctrl.message}}</p>
+				<p>Raw Data : {{ctrl.emps}}</p>
+			</div>
+		</div>
+		<div class="">
+			<div class="container">
+
+				<h1>Formatted Data</h1>
+
+				<table
+					class="table-condensed table-striped table-hover table-bordered">
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Salary</th>
+					</tr>
+
+					<tr ng-repeat="emp in ctrl.emps">
+						<td>{{emp.id}}</td>
+						<td>{{emp.name}}</td>
+						<td>{{emp.salary}}</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
 	</div>
+
 </div>
