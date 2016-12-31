@@ -1,3 +1,5 @@
+var app=angular.module("ContactApp");
+
 app.controller("MainController", function() {
 	this.age = 37;
 	this.name = "Sriram2";
