@@ -12,7 +12,8 @@
 	src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="bower_components/less/dist/less.js"></script>
 <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+<!-- <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script> -->
+<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
 
 <script type="text/javascript" src="js/app.js"></script>
@@ -46,16 +47,16 @@ body {
 		
 			<div class="navbar-header">
 				<div class="navbar-brand">
-					<a href="#/">My App</a>
+					<a ui-sref="main">My App</a>
 				</div>
 			</div>
 			
 			<ul class="nav navbar-nav">
-				<li><a href="#page1">GET - Page1</a></li>
-				<li><a href="#page2">PUT - Page2</a></li>
-				<li><a href="#page3">POST - Page3</a></li>
-				<li><a href="#page4">DEL - Page4</a></li>
-				<li><a href="#page5">NOTFOUND - Page5</a></li>
+				<li><a ui-sref="page1">GET - Page1</a></li>
+				<li><a ui-sref="page2">PUT - Page2</a></li>
+				<li><a ui-sref="page3">POST - Page3</a></li>
+				<li><a ui-sref="page4">DEL - Page4</a></li>
+				<li><a href="#/page5">NOTFOUND - Page5</a></li>
 			</ul>		
 
 			<ul class="nav navbar-nav navbar-right">
@@ -67,7 +68,7 @@ body {
 		</div>
 	</div>
 
-	<ng-view></ng-view>
+	<ui-view></ui-view>
 
 </div>
 

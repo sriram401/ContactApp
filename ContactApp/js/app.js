@@ -1,43 +1,58 @@
-var app=angular.module("ContactApp", ["ngRoute"]);
+var app=angular.module("ContactApp", ["ui.router"]);
 
 app.config(['$locationProvider', function($locationProvider) {
 	  $locationProvider.hashPrefix('');
 	}]);
 
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "partials/main.html",
+app.config(function($stateProvider,$urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/');
+
+	
+	$stateProvider
+    .state("main", {
+        url : '',
+    	templateUrl : "partials/main.html",
         controller: "MainController",
         controllerAs: "ctrl"
     })
-    .when("/page1", {
+    .state("page1", {
+        url : "/page1",
         templateUrl : "partials/page1.html",
         controller: "Page1Controller",
         controllerAs: "ctrl"
         
     })
-    .when("/page2", {
+    .state("page2", {
+        url : "/page2",
         templateUrl : "partials/page2.html",
-            controller: "Page2Controller",
-            controllerAs: "ctrl"
+        controller: "Page2Controller",
+        controllerAs: "ctrl"
     })
-    .when("/page3", {
+    .state("page3", {
+        url : "/page3",
         templateUrl : "partials/page3.html",
         controller: "Page3Controller",
         controllerAs: "ctrl"
 
     })
-    .when("/page4", {
+    .state("page4", {
+        url : "/page4",
         templateUrl : "partials/page4.html",
         controller: "Page4Controller",
         controllerAs: "ctrl"
 
     })
-    .otherwise(
-    {
-    	template : "<p class=\"label-error\">Error , Page Not found</p>"
+    .state('notFound', {
+        url: '{path:.*}',
+        template : "<p class=\"label-error\">Error , Page Not found</p>"
     });
+//    .otherwise(
+//    {
+//    	template : "<p class=\"label-error\">Error , Page Not found</p>"
+//    });
+    
+    
 });
 
 
