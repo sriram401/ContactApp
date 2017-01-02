@@ -6,12 +6,14 @@ app.config(['$locationProvider', function($locationProvider) {
 
 app.config(function($stateProvider,$urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider
+    .when('','/')
+    .otherwise('/notFound');
 
 	
 	$stateProvider
     .state("main", {
-        url : '',
+        url : '/',
     	templateUrl : "partials/main.html",
         controller: "MainController",
         controllerAs: "ctrl"
@@ -44,7 +46,7 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
     })
     .state('notFound', {
-        url: '{path:.*}',
+        url: "/notFound",
         template : "<p class=\"label-error\">Error , Page Not found</p>"
     });
 //    .otherwise(
